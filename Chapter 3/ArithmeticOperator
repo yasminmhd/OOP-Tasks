@@ -1,0 +1,80 @@
+package arithmeticoperator;
+//import library Scanner
+import java.util.Scanner;
+//class name ArithmeticOperator
+public class ArithmeticOperator {
+
+    public static void main(String[] args) {
+        
+        //object name scan
+        Scanner scan=new Scanner(System.in);
+        
+        //declare variable and data type
+        int menu, num1,num2,add,sub,mul,mod,inc1,inc2,dec1,dec2;
+        float div;
+        
+        //ask user to choose an arithmetic operator
+        System.out.println("1. Addition");
+        System.out.println("2. Subtraction");
+        System.out.println("3. Multiplication");
+        System.out.println("4. Division");
+        System.out.println("5. Modulus");
+        System.out.println("6. Increment");
+        System.out.println("7. Decrement");
+        System.out.println("Please choose an Arithmetic Operator: ");
+        menu=scan.nextInt();
+        
+        //ask for user to input number
+        System.out.println("Enter the first number: ");
+        num1=scan.nextInt();
+        System.out.println("Enter the second number: ");
+        num2=scan.nextInt();
+        scan.close();
+        
+        //formula for calculation in switch and print out the total
+        switch(menu){
+            //addition menu
+            case 1: 
+                add=num1+num2;
+                System.out.println("Addition= "+add);
+                break;
+            //substraction menu
+            case 2:
+                sub=num1-num2;
+                System.out.println("Subtraction= "+sub);
+                break;
+            //multiplication menu
+            case 3:
+                mul=num1*num2;
+                System.out.println("Multiplication= "+mul);
+                break;
+            //division menu
+            case 4:
+                div=num1/num2;
+                System.out.println("Division= "+String.format("%.2f", div));
+                break;
+            //modulus menu
+            case 5:
+                mod=num1%num2;
+                System.out.println("Modulus= "+mod);
+                break;
+            //increment menu
+            case 6:
+                inc1=++num1;
+                inc2=++num2;
+                System.out.println("Increment Number 1= "+inc1);
+                System.out.println("Increment Number 2= "+inc2);
+                break;
+            //decrement menu
+            case 7:
+                dec1=--num1;
+                dec2=--num2;
+                System.out.println("Decrement Number 1= "+dec1);
+                System.out.println("Decrement Number 2= "+dec2);
+                break;
+            //display 'Invalid Menu' if enter number beside those stated
+            default:
+                System.out.println("Invalid Menu");
+        }       
+    }  
+}
