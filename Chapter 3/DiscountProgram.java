@@ -42,7 +42,7 @@ public class DiscountProgram {
                 discountrate=75;
                 break;
         }
-        //ask user input for needed information (item name, price, quantity)
+        //ask user input for needed information (item name, price, quanitity)
         scan.nextLine();
         System.out.println("Enter item name: ");
         itemname=scan.nextLine();
