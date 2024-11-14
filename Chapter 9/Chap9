@@ -1,0 +1,17 @@
+package chap9;
+
+public class Chap9{
+    public static void main(String str[]){
+        int y = 2;
+        int x = 6;
+        // a division by 0 occurs here.
+        try{
+            int z = x/y;
+            System.out.println("after division: "+z);
+        }
+        catch (ArithmeticException ae){
+            System.out.println("attempt to divide by 0");}
+        System.out.println("after catch");
+    }
+}
+
