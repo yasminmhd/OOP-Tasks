@@ -1,0 +1,104 @@
+package labeltest;
+
+import java.awt.*;
+//import java.awt.event.*;
+import javax.swing.*;
+
+public class LabelTest extends JFrame {
+    private JLabel label1;
+    private JTextField textField1, textField2;
+    private JButton plainButton, fancyButton, button1;
+    private JTextArea textBox1;
+    private JRadioButton b1, b2, b3;
+    private JCheckBox cb1, cb2 ;
+    private JComboBox<ImageIcon> comboBox;
+   
+    public LabelTest(){
+       super("testing JLabel");
+       Container container = getContentPane();
+       container.setLayout(new FlowLayout());
+       
+       label1 = new JLabel("Label with text");
+       // label1.setToolTipText("this is label1");
+       container.add(label1);
+       
+       Icon blackcat = new ImageIcon("src/blackcat.gif");
+       JLabel label2 = new JLabel("Label with text and icon", blackcat,SwingConstants.LEFT);
+       label2.setToolTipText("This is an animated black cat");
+       container.add(label2);
+       
+       textField1 = new JTextField(10);
+       textField1.setSize(100,20);
+       textField1.setLocation(20,20);
+       container.add(textField1);
+       
+       plainButton = new JButton("Plain Button");
+       plainButton.setSize(100,20);
+       plainButton.setLocation(20,20);
+       container.add(plainButton);
+       
+       Icon ghost1 = new ImageIcon("src/ghost.gif");
+       fancyButton = new JButton("Fancy Button", ghost1);
+       fancyButton.setSize(100,20);
+       fancyButton.setLocation(50,50);
+       container.add(fancyButton);
+       
+       button1 = new JButton ("Pumpkin");
+       button1.setSize(50,40);
+       button1.setLocation(20,50);
+       container.add(button1);
+       
+       textField2 = new JTextField ("Key in here");
+       textField2.setSize(100,20);
+       textField2.setLocation(20,20);
+       textField2.setBackground(Color.BLACK);
+       textField2.setForeground(Color.WHITE);
+       textField2.setFont(new Font("Courier",Font.ITALIC,15));
+       container.add(textField2);
+       
+        textBox1 = new JTextArea ("Multiple line");
+        textBox1.setSize(100,200);
+        textBox1.setLocation(20,20);
+        textBox1.setBackground(Color.BLACK);
+        textBox1.setForeground(Color.WHITE);
+        textBox1.setFont(new Font("Bookman",Font.TRUETYPE_FONT,16));
+        container.add(textBox1);
+        
+        b1 = new JRadioButton("Hagen Dazz");
+        b2 = new JRadioButton("Basken Robin");
+        b3 = new JRadioButton("Walls");
+        b1.setBounds(20,20,200,50);
+        b2.setBounds(20,70,200,50);
+        b3.setBounds(20,110,200,50);
+        container.add(b1);
+        container.add(b2);
+        container.add(b3);
+        
+        cb1 = new JCheckBox("C");
+        cb2 = new JCheckBox("JAVA");
+        cb1.setBounds(20,20,200,50);
+        cb2.setBounds(20,70,200,50);
+        container.add(cb1);
+        container.add(cb2);
+        
+        ImageIcon[] icons = {
+            new ImageIcon("src/ghost.gif"),
+            new ImageIcon("src/pumpkin.png"),
+            new ImageIcon("src/blackcat.gif")
+        };
+        
+        comboBox = new JComboBox<>(icons);
+        comboBox.setMaximumRowCount(3);
+        comboBox.setBounds(50,50,100,20);
+        container.add(comboBox);
+        
+       setSize(1500,1400);
+       setVisible(true);
+
+    }
+    
+    public static void main(String[] args) {
+        LabelTest application = new LabelTest();
+        application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+}
